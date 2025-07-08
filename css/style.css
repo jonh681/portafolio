@@ -1,0 +1,220 @@
+    /* Fuente base */
+    body {
+        font-family: 'Rajdhani', sans-serif;
+        background-color: #000;
+        color: #fff;
+        margin: 0;
+        padding: 0;
+    }
+    
+    /* Scroll suave */
+    html {
+        scroll-behavior: smooth;
+    }
+    
+    /* Texto neón */
+    .text-neon,
+    h1.neon-text,
+    h2.text-neon {
+        color: #0ff;
+        text-shadow:
+        0 0 5px #0ff,
+        0 0 10px #0ff,
+        0 0 20px #0ff,
+        0 0 40px #0ff,
+        0 0 80px #0ff;
+    }
+    
+    /* Animación de pulso */
+    @keyframes pulsoNeon {
+        0%, 100% {
+        text-shadow:
+            0 0 5px #0ff,
+            0 0 10px #0ff,
+            0 0 20px #0ff,
+            0 0 40px #0ff,
+            0 0 80px #0ff;
+        }
+        50% {
+        text-shadow:
+            0 0 10px #0ff,
+            0 0 20px #0ff,
+            0 0 30px #0ff,
+            0 0 60px #0ff,
+            0 0 100px #0ff;
+        }
+    }
+    
+    /* Título principal con animación */
+    .neon-text {
+        font-size: 10vw;
+        animation: pulsoNeon 2.5s infinite;
+    }
+    
+    /* Botón estilo neón */
+    .neon-button {
+        color: #0ff;
+        border: 2px solid #0ff;
+        background-color: transparent;
+        font-weight: bold;
+        padding: 12px 24px;
+        text-shadow: 0 0 5px #0ff;
+        box-shadow: 0 0 5px #0ff;
+        transition: all 0.3s ease-in-out;
+    }
+    
+    .neon-button:hover {
+        background-color: #0ff;
+        color: #000;
+        box-shadow: 0 0 15px #0ff;
+    }
+    
+    /* Imagen de perfil */
+    img.rounded-circle {
+        box-shadow: 0 0 15px #0ff;
+    }
+    
+    /* Formulario */
+    .form-control {
+        background-color: #111 !important;
+        color: #fff !important;
+        border: 1px solid #0ff;
+    }
+    
+    .form-label {
+        color: #0ff;
+    }
+    
+    /* Navbar */
+    .navbar-brand,
+    .nav-link {
+        color: #ccc !important;
+        transition: 0.3s;
+    }
+    
+    .nav-link:hover,
+    .navbar-brand:hover {
+        color: #0ff !important;
+        text-shadow: 0 0 8px #0ff;
+    }
+    
+    /* Responsive ajustes */
+    @media (max-width: 768px) {
+        .neon-text {
+        font-size: 15vw;
+        }
+    
+        .neon-button {
+        padding: 10px 20px;
+        }
+    }
+    
+    /* Fondo del canvas de partículas (si deseas poner algo de fondo oscuro por defecto) */
+    canvas {
+        z-index: 0;
+    }
+    .neon-button:focus {
+        outline: none;
+        box-shadow: 0 0 25px #0ff;
+    }
+
+    #cursor-light {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 200px;
+        height: 200px;
+        pointer-events: none;
+        background: radial-gradient(circle, rgba(0, 255, 255, 0.15), transparent 70%);
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1; /* debajo del contenido, pero arriba del canvas si lo deseas */
+        transition: transform 0.05s linear;
+    }
+
+    /* Scroll personalizado para neon (solo en WebKit navegadores) */
+    .modal-body::-webkit-scrollbar {
+        width: 8px;
+    }
+    
+    .modal-body::-webkit-scrollbar-track {
+        background: #111;
+    }
+    
+    .modal-body::-webkit-scrollbar-thumb {
+        background: #0ff;
+        border-radius: 10px;
+        box-shadow: 0 0 10px #0ff;
+    }
+    
+    /* Firefox */
+    .modal-body {
+        scrollbar-width: thin;
+        scrollbar-color: #0ff #111;
+    }
+    .habilidad-box {
+        background-color: #111;
+        border: 1px solid #0ff;
+        box-shadow: 0 0 8px rgba(0, 255, 255, 0.3);
+    }
+    .nivel {
+        padding: 4px 12px;
+        border-radius: 20px;
+        font-weight: bold;
+        text-transform: uppercase;
+        font-size: 0.85rem;
+    }
+    
+      /* Colores por nivel */
+    .nivel-principiante {
+        background-color: #333;
+        color: #bbb;
+        border: 1px solid #666;
+    }
+    
+    .nivel-medio {
+        background-color: #ffaa00;
+        color: #000;
+        border: 1px solid #ffc107;
+        box-shadow: 0 0 5px #ffaa00;
+    }
+    
+    .nivel-avanzado {
+        background-color: #00c3ff;
+        color: #000;
+        border: 1px solid #00eaff;
+        box-shadow: 0 0 5px #00eaff;
+    }
+    
+    .nivel-experto {
+        background-color: #00ff99;
+        color: #000;
+        border: 1px solid #00ffaa;
+        box-shadow: 0 0 8px #00ffaa;
+    }
+
+    .accordion-button::after {
+        content: "";
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 16 16' fill='%2300ffff' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' d='M1.5 5.5l6 6 6-6'/%3E%3C/svg%3E");
+        transform: rotate(0deg);
+        transition: transform 0.3s ease;
+    }
+    
+    .accordion-button:not(.collapsed)::after {
+        transform: rotate(180deg);
+    }
+    
+    form input::placeholder,
+    form textarea::placeholder {
+    color: #aaa;
+    opacity: 0.7;
+    }
+
+    form input:focus,
+    form textarea:focus {
+    border-color: #0ff;
+    box-shadow: 0 0 8px #0ff;
+    background-color: #111;
+    color: #fff;
+    }
+

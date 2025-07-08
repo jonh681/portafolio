@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portafolio - Tu Nombre</title>
+
+  <!-- Bootstrap + Fuentes + Estilos -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+</head>
+<body class="bg-black text-white">
+    <canvas id="nodos-canvas" class="position-fixed top-0 start-0 w-100 h-100" style="z-index: 0;"></canvas>
+    <div id="cursor-light"></div>
+    <div class="z-1 position-relative"></div>
+        <!-- NAVBAR -->
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-black border-bottom border-secondary px-4">
+            <div class="container-fluid">
+            <a class="navbar-brand text-neon" href="#">Jonatha Bautista Garcia</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navMenu">
+                <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="#sobre-mi">Sobre mí</a></li>
+                <li class="nav-item"><a class="nav-link" href="#experiencia">Experiencia</a></li>
+                <li class="nav-item"><a class="nav-link" href="#habilidades">Habilidades</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+                </ul>
+            </div>
+            </div>
+        </nav>
+        <!-- SOBRE MÍ -->
+        <section id="sobre-mi" class="container py-5 mt-5" data-aos="zoom-in">
+            <div class="row align-items-center">
+            <div class="col-md-4 text-center mb-4">
+                <img src="img/tu-foto.jpg" alt="Tu Foto" class="img-fluid rounded-circle border border-info" style="max-width: 200px;">
+            </div>
+            <div class="col-md-8"  style="text-align: justify;">
+                <h2 class="text-neon">Sobre mí</h2>
+                <p>
+                    ¡Hola! Soy <strong>Jonathan Bautista</strong>, ingeniero en computación con una fuerte pasión por 
+                    el desarrollo web y el análisis de datos, con 4 años de experiencia. <br>
+                    Me caracterizo por tener un enfoque proactivo, una mentalidad de aprendizaje constante y una alta 
+                    capacidad para liderar equipos hacia resultados de alto impacto. Disfruto enfrentar desafíos técnicos
+                     y colaborar en proyectos innovadores que transformen ideas en soluciones reales.
+                </p>
+            </div>
+            </div>
+        </section>
+        <!-- educación, aptitudes, Habilidades -->
+         <section id="educacion" class="container py-5" data-aos="zoom-in">
+            <div class="row g-4">
+
+                <!-- Educación -->
+                <div class="col-md-4">
+                  <div class="bg-dark text-white p-4 border border-info rounded h-100">
+                    <h4 class="text-info mb-3">🎓 Educación</h4>
+                    <p><strong>Ingeniería en Computación</strong><br>UniversidadAutónoma del Estado de México (UAEM)<br><small>2018 – 2023</small></p>
+                    <hr class="border-info">
+                    <p><strong>Certificaciones:</strong><br>Curso de Automatización con Python – Udemy<br>Curso de Power BI – Platzi</p>
+                  </div>
+                </div>
+            
+                <!-- Habilidades personales -->
+                <div class="col-md-4">
+                  <div class="bg-dark text-white p-4 border border-info rounded h-100">
+                    <h4 class="text-info mb-3">🌟 Habilidades personales</h4>
+                    <ul class="mb-0">
+                      <li>Comunicación efectiva</li>
+                      <li>Liderazgo de equipos</li>
+                      <li>Autogestión y disciplina</li>
+                      <li>Resolución de problemas</li>
+                      <li>Trabajo en equipo</li>
+                    </ul>
+                  </div>
+                </div>
+            
+                <!-- Aptitudes -->
+                <div class="col-md-4">
+                  <div class="bg-dark text-white p-4 border border-info rounded h-100">
+                    <h4 class="text-info mb-3">🧠 Aptitudes</h4>
+                    <ul class="mb-0">
+                      <li>Adaptabilidad al cambio</li>
+                      <li>Orientación a resultados</li>
+                      <li>Proactividad</li>
+                      <li>Pensamiento analítico</li>
+                      <li>Capacidad de aprendizaje continuo</li>
+                    </ul>
+                  </div>
+                </div>
+            
+            </div>
+        </section>
+        <!-- EXPERIENCIA -->
+        <section id="habilidades" class="container py-5" data-aos="zoom-in">
+            <h2 class="text-neon mb-4">Experiencia</h2>
+            <div class="d-grid gap-3">
+                <button class="btn neon-button" data-bs-toggle="modal" data-bs-target="#modalExp1">
+                    Desarrollador Web y Analista de datos python - SCL Consultores
+                </button>
+                <button class="btn neon-button" data-bs-toggle="modal" data-bs-target="#modalExp2">
+                    Desarrollador web (FrontEnd) - Egasmart
+                </button>
+                <button class="btn neon-button" data-bs-toggle="modal" data-bs-target="#modalExp3">
+                    Analista de datos - Fedele S.A de C.V
+                </button>
+            </div>
+        </section>
+        <!-- Modal 1 -->
+        <div class="modal fade" id="modalExp1" tabindex="-1" aria-labelledby="modalExp1Label" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-lg">
+                <div class="modal-content bg-dark text-white border border-info">
+                    <div class="modal-header">
+                        <h5 class="modal-title text-neon" id="modalExp1Label">
+                            Desarrollador Web y Analista de Datos con Python – SCL Consultores
+                        </h5>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body overflow-auto" style="text-align: justify; max-height: 70vh;">
+                        <p><strong>Periodo:</strong> Julio 2021 – Diciembre 2023</p>
+                        <h3><strong>Desarrollo Web:</strong></h3>
+                        <p>
+                            Desarrollé soluciones web completas utilizando HTML, CSS, JavaScript, Bootstrap, PHP y MySQL, enfocadas en el control de tiempos laborales del personal.
+                            El sistema cuenta con dos módulos principales:
+                        </p>
+                        <ul>
+                            <li><strong>Usuario:</strong> Registro de entradas y salidas diarias o extemporáneas. Se incluye un calendario visual que destaca los días con actividad registrada.</li>
+                            <li><strong>Administrador:</strong> Alta de nuevos empleados y clientes, así como la descarga de reportes generales por empleado.</li>
+                        </ul>
+                        <p>
+                            El frontend fue desarrollado con HTML, CSS y Bootstrap, mientras que el backend se construyó con PHP y MySQL, gestionando operaciones como consultas, inserciones y reportes.
+                        </p>
+                
+                        <h3><strong>Análisis de Datos con Python:</strong></h3>
+                        <p>
+                            Participé en la creación de scripts de automatización para la extracción y conciliación de datos masivos, tanto para uso interno como para clientes externos.
+                            Estas automatizaciones permitieron reducir tiempos de entrega y minimizar errores manuales en tareas repetitivas.
+                        </p>
+                        <p>
+                            Algunas de las automatizaciones externas se desarrollaron para clientes como <strong>Volvo, Estafeta, COATS, GTAC, entre otros</strong>.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal 2 -->
+        <div class="modal fade" id="modalExp2" tabindex="-1" aria-labelledby="modalExp2Label" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-lg">
+                <div class="modal-content bg-dark text-white border border-info">
+                    <div class="modal-header">
+                        <h5 class="modal-title text-neon" id="modalExp2Label">Desarrollador Web (FrontEnd) – Egasmart</h5>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body overflow-auto" style="text-align: justify; max-height: 70vh;">
+                        <p><strong>Periodo:</strong> Enero 2024 – Noviembre 2024</p>
+                        <h3><strong>Desarrollo de Dashboard Web (FrontEnd)</strong></h3>
+                        <p>
+                            Desarrollé una plataforma web orientada al sector gasolinero, la cual presentaba un <strong>dashboard interactivo</strong> con información clave sobre ingresos, egresos, facturación y métricas operativas de valor para el usuario final.
+                        </p>
+                        <p>
+                            La interfaz fue construida con <strong>React, TypeScript, CSS y NEXT UI</strong>, enfocándome en una experiencia visual moderna, limpia y responsiva. 
+                            El sistema se integró mediante APIs utilizando <strong>Docker</strong> para consumo de servicios y despliegue de componentes dinámicos dentro del dashboard.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal 3 -->
+        <div class="modal fade" id="modalExp3" tabindex="-1" aria-labelledby="modalExp3Label" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-lg">
+                <div class="modal-content bg-dark text-white border border-info">
+                    <div class="modal-header">
+                        <h5 class="modal-title text-neon" id="modalExp3Label">Analista de Datos – Fedele S.A. de C.V.</h5>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body overflow-auto" style="text-align: justify; max-height: 70vh;">
+                        <p><strong>Periodo:</strong> Noviembre 2024 – Actualidad</p>
+                
+                        <h3><strong>Análisis de Datos con Power BI</strong></h3>
+                        <p>
+                            Diseñé y desarrollé dashboards interactivos para visualizar la información de ventas de toda la empresa. Estos paneles permiten a directivos y responsables visualizar los datos de forma clara y atractiva mediante componentes visuales como gráficos, tablas, cuadros comparativos, tarjetas informativas y filtros dinámicos.
+                        </p>
+                        <p>
+                            El objetivo principal fue facilitar el análisis de datos clave para identificar áreas de oportunidad y proponer soluciones efectivas de manera ágil.
+                        </p>
+                
+                        <h3><strong>Automatización de Actividades</strong></h3>
+                        <p>
+                            Implementé bots que automatizan tareas repetitivas como:
+                        </p>
+                        <ul>
+                            <li>Scraping de información desde plataformas web</li>
+                            <li>Conciliación automática de reportes descargados desde SAP</li>
+                            <li>Generación y envío de reportes vía correo electrónico</li>
+                        </ul>
+                
+                        <h3><strong>Desarrollo Web para Capacitación Interna</strong></h3>
+                        <p>
+                            Desarrollé una plataforma web de cursos internos dirigida al equipo de ventas, usando HTML, CSS, JavaScript, Bootstrap, PHP y MySQL. El sistema está dividido en dos módulos:
+                        </p>
+                        <ul>
+                            <li><strong>Usuario:</strong> Permite inscribirse a cursos creados por el administrador y acceder a contenidos de capacitación relevantes para la empresa.</li>
+                            <li><strong>Administrador:</strong> Gestión de cursos personalizados y visualización de métricas de participación y avance mediante un dashboard informativo.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- HABILIDADES -->
+        <section id="habilidades" class="container py-5" data-aos="zoom-in">
+            <h2 class="text-neon mb-4">SKILLS</h2>
+            <div class="row g-4">
+                <!-- Columna izquierda -->
+                <div class="col-md-6">
+                    <div class="accordion accordion-habilidades" id="accordionColumna1">
+                    <!-- HTML / CSS -->
+                        <div class="accordion-item bg-dark border border-info">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed bg-dark text-white" type="button" data-bs-toggle="collapse" data-bs-target="#habilidadHTML">
+                                    <strong>🖌️ HTML / CSS</strong> <span class="ms-auto nivel nivel-avanzado">Avanzado</span>
+                                </button>
+                            </h2>
+                            <div id="habilidadHTML" class="accordion-collapse collapse" data-bs-parent="#accordionColumna1">
+                                <div class="accordion-body text-white">
+                                    <ul>
+                                        <li>Maquetación semántica y responsive</li>
+                                        <li>Diseños oscuros y modernos con Bootstrap</li>
+                                        <li>Uso de Flexbox y Grid</li>
+                                        <li>Animaciones CSS y efectos visuales</li>
+                                        <li>Optimización para múltiples dispositivos</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- JavaScript -->
+                        <div class="accordion-item bg-dark border border-info">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed bg-dark text-white" type="button" data-bs-toggle="collapse" data-bs-target="#habilidadJS">
+                                    <strong>⚡ JavaScript</strong> <span class="ms-auto nivel nivel-avanzado">Avanzado</span>
+                                </button>
+                            </h2>
+                            <div id="habilidadJS" class="accordion-collapse collapse" data-bs-parent="#accordionColumna1">
+                                <div class="accordion-body text-white">
+                                    <ul>
+                                        <li>Manipulación avanzada del DOM</li>
+                                        <li>Validación de formularios dinámicos</li>
+                                        <li>Creación de interfaces interactivas</li>
+                                        <li>Gráficos con Chart.js</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- PHP / MySQL -->
+                        <div class="accordion-item bg-dark border border-info">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed bg-dark text-white" type="button" data-bs-toggle="collapse" data-bs-target="#habilidadPHP">
+                                    <strong>🐘 PHP / MySQL</strong> <span class="ms-auto nivel nivel-avanzado">Avanzado</span>
+                                </button>
+                            </h2>
+                            <div id="habilidadPHP" class="accordion-collapse collapse" data-bs-parent="#accordionColumna1">
+                                <div class="accordion-body text-white">
+                                    <ul>
+                                        <li>Desarrollo backend con sesiones y autenticación</li>
+                                        <li>Consultas dinámicas con MySQL</li>
+                                        <li>Sistemas CRUD personalizados</li>
+                                        <li>Generación de reportes y dashboards</li>
+                                        <li>Organización modular de código</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- React -->
+                        <div class="accordion-item bg-dark border border-info">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed bg-dark text-white" type="button" data-bs-toggle="collapse" data-bs-target="#habilidadReact">
+                                    <strong>⚛️ React</strong> <span class="ms-auto nivel nivel-medio">Intermedio</span>
+                                </button>
+                            </h2>
+                            <div id="habilidadReact" class="accordion-collapse collapse" data-bs-parent="#accordionColumna2">
+                                <div class="accordion-body text-white">
+                                    <ul>
+                                        <li>Componentes funcionales y hooks</li>
+                                        <li>Uso de props y estados (useState, useEffect)</li>
+                                        <li>Consumo de APIs REST</li>
+                                        <li>Estilos con NEXT UI</li>
+                                        <li>Despliegue con Vite / Netlify</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Columna derecha -->
+                <div class="col-md-6">
+                    <div class="accordion accordion-habilidades" id="accordionColumna2">
+                        <!-- Python -->
+                        <div class="accordion-item bg-dark border border-info">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed bg-dark text-white" type="button" data-bs-toggle="collapse" data-bs-target="#habilidadPython">
+                                    <strong>🐍 Python</strong> <span class="ms-auto nivel nivel-avanzado">Avanzado</span>
+                                </button>
+                            </h2>
+                            <div id="habilidadPython" class="accordion-collapse collapse" data-bs-parent="#accordionColumna2">
+                                <div class="accordion-body text-white">
+                                    <ul>
+                                        <li>Automatización de tareas con scripts</li>
+                                        <li>Web scraping con (Selenium)</li>
+                                        <li>Manejo de datos (pandas)</li>
+                                        <li>Reportes en Excel (openpyxl)</li>
+                                        <li>Integración con APIs</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Power BI -->
+                        <div class="accordion-item bg-dark border border-info">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed bg-dark text-white" type="button" data-bs-toggle="collapse" data-bs-target="#habilidadBI">
+                                    <strong>📊 Power BI</strong> <span class="ms-auto nivel nivel-avanzado">Avanzado</span>
+                                </button>
+                            </h2>
+                            <div id="habilidadBI" class="accordion-collapse collapse" data-bs-parent="#accordionColumna2">
+                                <div class="accordion-body text-white">
+                                    <ul>
+                                        <li>Diseño de dashboards corporativos</li>
+                                        <li>Visualización de métricas clave</li>
+                                        <li>Uso de filtros dinámicos y DAX básico</li>
+                                        <li>Conexión a orígenes de datos diversos</li>
+                                        <li>Optimización para toma de decisiones</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Excel -->
+                        <div class="accordion-item bg-dark border border-info">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed bg-dark text-white" type="button" data-bs-toggle="collapse" data-bs-target="#habilidadExcel">
+                                    <strong>📈 Excel</strong> <span class="ms-auto nivel nivel-avanzado">Avanzado</span>
+                                </button>
+                            </h2>
+                            <div id="habilidadExcel" class="accordion-collapse collapse" data-bs-parent="#accordionColumna2">
+                                <div class="accordion-body text-white">
+                                    <ul>
+                                        <li>Creación de dashboards interactivos con tablas y gráficos</li>
+                                        <li>Uso de fórmulas avanzadas (BUSCARV, INDEX, COINCIDIR, SUMAR.SI.CONJUNTO)</li>
+                                        <li>Validación de datos y control de errores</li>
+                                        <li>Automatización con macros y VBA básico</li>
+                                        <li>Formato condicional y segmentación de datos</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+              
+        </section>
+        <!-- CONTACTO -->
+        <section id="contacto" class="container py-5" data-aos="fade-up">
+            <h2 class="text-neon mb-4 ">Contáctame</h2>
+            <div class="row g-4 justify-content-center">
+                <!-- Columna de contacto directo -->
+                <div class="col-md-4">
+                    <div class="bg-dark text-white p-4 border border-info rounded h-100">
+                        <p class="fs-5 mb-3"><i class="bi bi-person-fill me-2 text-info"></i><strong>Ing. Jonathan Bautista</strong></p>
+                        <p class="fs-5 mb-2">
+                            <i class="bi bi-envelope-fill me-2 text-info"></i>
+                            <a href="mailto:jonathan@email.com" class="text-info text-decoration-none">jonathan_desarrollo@gmail.com</a>
+                        </p>
+                        <p class="fs-5 mb-2">
+                            <i class="bi bi-telephone-fill me-2 text-info"></i>
+                            <a href="tel:+5215512345678" class="text-info text-decoration-none">+52 56 1254 3786</a>
+                        </p>
+                        <p class="fs-5 mb-2">
+                            <i class="bi bi-whatsapp me-2 text-success"></i>
+                            <a href="https://wa.me/525612543786" target="_blank" class="text-success text-decoration-none">Enviar WhatsApp</a>
+                        </p>
+                    </div>
+                </div>
+                <!-- Columna del formulario -->
+                <div class="col-md-6">
+                    <form class="bg-dark p-4 rounded border border-info shadow-lg text-white" method="POST" action="php/envio.php">
+                        <div class="mb-3">
+                            <label for="nombre" class="form-label text-info"><i class="bi bi-person-fill me-2"></i>Nombre completo</label>
+                            <input type="text" class="form-control bg-transparent text-white border-info" id="nombre" name="nombre" required placeholder="Tu nombre">
+                        </div>
+                        <div class="mb-3">
+                            <label for="correo" class="form-label text-info"><i class="bi bi-envelope-fill me-2"></i>Correo electrónico</label>
+                            <input type="email" class="form-control bg-transparent text-white border-info" id="correo" name="correo" required placeholder="ejemplo@email.com">
+                        </div>
+                        <div class="mb-3">
+                            <label for="mensaje" class="form-label text-info"><i class="bi bi-chat-dots-fill me-2"></i>Mensaje</label>
+                            <textarea class="form-control bg-transparent text-white border-info" id="mensaje" name="mensaje" rows="5" required placeholder="Escribe tu mensaje aquí..."></textarea>
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-outline-info px-4">
+                            <i class="bi bi-send-fill me-2"></i>Enviar mensaje
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+        <!-- FOOTER -->
+        <footer class="text-center py-4 border-top border-secondary mt-5" >
+            <small>© 2025 Jonathan Bautista Garcia. Todos los derechos reservados.</small>
+        </footer>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.150.1/build/three.min.js"></script>
+    <script src="js/nodo.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+    <script>
+        const cursorLight = document.getElementById("cursor-light");
+      
+        document.addEventListener("mousemove", (e) => {
+          cursorLight.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
+        });
+      </script>
+      
+
+</body>
+</html>

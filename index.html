@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portafolio - Bienvenido</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="bg-black text-white">
+
+  <div class="d-flex justify-content-center align-items-center vh-100 text-center position-relative overflow-hidden">
+    <!-- Canvas de fondo -->
+    <canvas id="nodos-canvas" class="position-absolute top-0 start-0 w-100 h-100 z-0"></canvas>
+
+    <!-- Contenido en primer plano -->
+    <div class="position-relative z-1">
+      <h1 class="neon-text mb-4">BIENVENIDO</h1>
+      <a href="principal.html" class="btn neon-button">Clic para conocerme</a>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/three@0.150.1/build/three.min.js"></script>
+  <script src="js/nodo.js"></script>
+</body>
+</html>
